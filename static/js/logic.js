@@ -7,8 +7,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // Fetch earthquake data from USGS GeoJSON feed
-fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')
-  .then(response => response.json())
+d3.json('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')
   .then(data => {
     // Loop through the earthquake features and create markers on the map
     data.features.forEach(feature => {
